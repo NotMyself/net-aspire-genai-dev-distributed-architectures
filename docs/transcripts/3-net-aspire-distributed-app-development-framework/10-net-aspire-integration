@@ -1,0 +1,181 @@
+In this video, we are going to deep dive into DotNet aspired integrations.
+
+DotNet aspire integrations are created NuGet packages designed to make it simple to integrate your microservices
+
+with external resources such as caches, databases, or message brokers.
+
+They handle the heavy lifting from automatic container provisioning to standard configuration patterns
+
+like environment variables.
+
+This means that you can adopt cloud native features quickly without writing a ton of boilerplate connection
+
+code.
+
+So now let's understand the dotnet aspire integration types.
+
+There are two main types of integrations in dotnet aspire.
+
+These are the hosting integrations and client integrations.
+
+Hosting integrations are including a Post-project client integrations are hosting in the consumer project
+
+which is the.
+
+Net projects.
+
+So let me explain.
+
+With the hosting integrations, these go into your app host project modeling the resources like databases,
+
+caches or message queues.
+
+They tell the aspire how to provision or reference these services.
+
+As an example, we can give the aspire hosting, Redis or Aspire hosting PostgreSQL NuGet packages.
+
+And if you look at the client integration, we can say that these packages are added into your consumer
+
+projects.
+
+Example of the ASP.Net web API project or API service project.
+
+They set up the things like dependency injection, telemetry and health checks for the resources.
+
+As an example, we can give aspire, Stack Exchange, Redis or Aspire MPG, SQL, Entity Framework core
+
+PostgreSQL in order to connect these resources into our client consumer projects.
+
+These two integration layers can be used together or independently, depending on whether you need to
+
+both provisioning and a client library for your microservices.
+
+That means you can use these integrations independently for only hosting or for only client integrations.
+
+So now let me explain these integrations one by one.
+
+The first one is hosting integrations which is provisioning the resources, hosting integrations.
+
+Attach our app host project which is our orchestrator.
+
+And they basically extend the AI distributed application Builder interface and adding the methods like
+
+add, reduce, add, Postgres, and they provision the container based resources automatically or point
+
+to an existing instance if you are using a local or remote services, they use environment variables
+
+or built in logic to pass the connection string to other projects.
+
+That depends on them.
+
+So as an example, you can see Redis hosting integration in the app host project.
+
+We basically use add radius methods and give the cache name as a cache by adding the cache dotnet aspire
+
+nodes to spin up a Redis container or resources automatically.
+
+Now let's deep dive into client integration, which is connecting to resources.
+
+On the client side, we configure our microservices in order to consume resources.
+
+And we basically extend I host application builder in consuming project.
+
+And typically in the process of consuming ASP.Net web API project, you will see something like builders
+
+add reduce distributed cache extension method and the client integration sets up the health checks,
+
+logging and metrics for the robust cloud native patterns.
+
+For example, referencing the aspire Stack Exchange Redis client NuGet packages.
+
+We can easily connect Redis resources into our web project with adding the ad Redis distributed cache
+
+extension method.
+
+So with this extension method, I'm giving the connection name as a cache.
+
+We basically provide the Connect Redis resources easily without hesitating any manual connection string
+
+or any configuration.
+
+So now let's examine the relationship between hosting and client integration.
+
+While hosting and client integrations complement each other, they are not tightly coupled.
+
+First of all, the hosting integrations test the app, host project how to provision or attach a resources.
+
+So you can see in here we attach a radius resources and inject environment variable like connection
+
+string cache into any project that reference to these resources.
+
+That means the second type is client integration.
+
+And it is basically read those environment variables or standard configurations to automatically configure
+
+the connection to the radius resources.
+
+In here we use a Radius distributed case extension method and passing the cache name in order to connect
+
+as a client integration from our dotnet projects, and it sets up advanced features like telemetry,
+
+resilience and health checks.
+
+For that resources, you can use hosting integration alone or client integration alone, or both, depending
+
+on your requirements.
+
+DotNet aspire integration is more than just provide a connection string.
+
+They can automatically set up observability.
+
+logging, tracing and metrics, health checks, and resiliency by default by using the DC Net Aspire
+
+integrations.
+
+So here you can see official integrations.
+
+There are official dotnet aspire integrations for many popular services.
+
+These are the cloud agnostic services including Redis, PostgreSQL, RabbitMQ, Kafka, Keycloak and
+
+also Azure or AWS cloud packages for Azure Storage, Azure Key Vault, Azure Service Bus with hosting
+
+packages, and also Community Toolkit that contain many more integrations contributed by the community,
+
+for example, Eulima connections and integrations, and these packages are all discoverable on NuGet
+
+and counter-attack with aspire, and you can go to the official integrations table with clicking this
+
+link.
+
+And after that, you can examine all the integrations that including into our dotnet aspire.
+
+For example, I am going to open the one of the integrations in here, for example, PostgreSQL integrations.
+
+You can open the documentation.
+
+And in here you can see the article has two main parts hosting integration and client integration.
+
+If you go to hosting integration you can see that we need these NuGet packages.
+
+And after that we can use Add Postgres extension method into our app host project.
+
+And after that, after spinning up the PostgreSQL container using the RSP integrations, we can continue
+
+client integration into our ASP.Net web API project with adding these packages into our application
+
+as a client integration, and after that, we can use this extension method in the program.cs of the
+
+ASP.Net web API project.
+
+In order to consume and connect these resources automatically with using the dotnet aspire integrations.
+
+As a result, we can say that hosting integrations define how to provision or reference external resources
+
+in your Epos project.
+
+Client integrations at the standard configurations.
+
+Observability and resilience in your consumer.
+
+Microservices.

@@ -1,0 +1,157 @@
+In this video we are going to learn dotnet aspire service discovery.
+
+We will see how aspire automatically injects environment variables to help the microservices discover
+
+each other without hard coding addresses or ports.
+
+So let me start with what is service discovery in dotnet aspire in a cloud native or distributed systems,
+
+microservices frequently scale or move around.
+
+Service discovery is how those microservices locate each other.
+
+For example, service A needs to call Service B's Rest endpoint, but can't rely on a hard coded host
+
+or port.
+
+With dotnet aspire, we rely on configuration that is injected automatically, making each service discoverable
+
+by the name.
+
+So now let me explain the implicit service discovery by reference.
+
+Net aspire handle the service discovery implicitly.
+
+When you reference a microservices in another microservices, aspire automatically generate configuration
+
+entries so they can find each other.
+
+Here you can see a code example in the post.
+
+In the forum case, you can imagine a scenario where you have a web frontend and it depends on the catalog
+
+and the basket.
+
+Microservices.
+
+Here you can see our frontend project.
+
+This is getting reference cache catalog and basket.
+
+So a reference represents a dependency between resources with reference cache basket and catalog tasks
+
+that aspire.
+
+That frontend depends on both cache container catalog and basket projects.
+
+And aspire inject service discovery info for the cache basket and catalog into the front end project
+
+via configuration.
+
+So that means front end project resources using with reference method.
+
+In order to add a dependency on the radius container Catalog and Basket project into the front end application.
+
+So now let me explain.
+
+Built in resource types.
+
+As you remember, we know that there are four resource types that we can add.
+
+These are the add project add container add executable and add parameter.
+
+So basically we can add container for example.
+
+This is a container resource which is container.
+
+References.
+
+And also we can add projects.
+
+That means catalog and basket.
+
+Microservices is a project resources which is project.
+
+The project references.
+
+All these dependencies can represent connection string or service discovery information.
+
+So this is a container resource.
+
+And that reference a connection string and catalog.
+
+And basket is a project resources.
+
+And that reference the service discovery information.
+
+All these reference automatically injected as an environment variable into the front end project by
+
+dotnet aspire.
+
+So now let me explain and remember this example.
+
+Let's see which environment variables are injected into our front end project.
+
+Here you can see that we have front end project and getting reference cache container and catalog basket
+
+projects.
+
+So first of all in the cache container injecting connection string which is a connection string underscore
+
+underscore cache and localhost and the port number.
+
+So that means Redis container referencing injecting a connection string environment variable into the
+
+web front end project.
+
+But project the project references are handled differently than resources that have well-defined connection
+
+strings.
+
+So project to projects are injecting microservice endpoints.
+
+And here you can see that we can injecting with reference and microservices and using this service discovery
+
+address.
+
+These are the services underscore the catalog or basket API service name underscore HTTP and Https.
+
+Even you can inject the gRPC.
+
+And these are the service discovery endpoint addresses injected by project to project references.
+
+So after that we can integrate all these reference services using the named registrations.
+
+You can find another illustration in here web frontend getting reference from the API service and cache
+
+container and cache container injected as a connection string.
+
+Redis and API service injected at the services API service endpoints injected to the web frontend projects.
+
+We can also configure container endpoints.
+
+For container resources, you can define named endpoints that will later be referenced by the microservices.
+
+Here you can see the simple example.
+
+We basically add a container and specify the width HTTP endpoints and defining an endpoint.
+
+And after that we can reach this endpoint using the custom container dot get endpoint method.
+
+And we can paste this endpoint in order to get a reference to project the project reference and inject
+
+the service discovery name into our API service projects.
+
+So this is an example of the configuring container endpoints explicitly.
+
+So if you summarize that the important thing is for backing services like Redis or PostgreSQL database,
+
+you will see connection string variable.
+
+Here you can see the connection string injection for microservices to microservices project references
+
+you will get the services service name and this is the endpoint definition.
+
+So this is the difference between the injecting containers and projects and using the service discovery
+
+in dotnet aspire.
