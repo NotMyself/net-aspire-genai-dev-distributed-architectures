@@ -1,0 +1,113 @@
+In this video, we are going to run newly created dotnet aspire solution and see how the front end interacts
+
+with the API and Redis cache, and then explore the built in dotnet aspire dashboard.
+
+For that purpose, please open the Visual Studio and go to the R solution folder.
+
+And you can see that I'm going to right click the App.post project and set a startup project.
+
+After that we are going to run this dotnet aspire solution.
+
+But before that make sure that you have started Docker Desktop.
+
+Docker desktop is very important on behind the scenes dotnet aspire using Docker desktop in order to
+
+run containerized application.
+
+So after startup Docker desktop go back to our solution and run the.
+
+Net aspire project with clicking F5 or this Https run button for the Air Force Project, Air Force Project,
+
+or Distributed Application Project.
+
+It is going to start our dotnet aspired distributed application.
+
+As you can see that this is the project console log.
+
+The application started successfully.
+
+This is the distributed application.
+
+And after that you can see that it is automatically started dotnet aspire dashboard.
+
+This dashboard visualizing your distributed services and including status logs, health checks and real
+
+time monitoring.
+
+As you can see that dotnet aspire dashboard provides the insight into each resources.
+
+Here you can see the our main menu including resources, console structure, traces and metrics.
+
+And it is started with the resources.
+
+Resources show of all the.
+
+Net projects with their current state and point addresses and environment variables.
+
+If you click the console, you can collect the console outputs for each project.
+
+You can select the project and see the console logs and here you can see structure logs.
+
+This is displayed logs in a table format with basic filtering and search.
+
+Expand details.
+
+By clicking the view, you should see the logs about the API services and web frontend.
+
+If you click one of the structured logs, you can see the each log entry details by viewing these details
+
+in the right hand side.
+
+So after that you can see that we have traces.
+
+Traces basically track the requests across the application.
+
+For instance you can send the request and see how it flows through the web frontend and API services.
+
+And here you can see we have a metrics.
+
+It is showing various instruments and counters.
+
+You can filter them by dimensions to see exactly how your application performing under the hood.
+
+For example you can see HTTP client.
+
+Active request, connection duration, and so on.
+
+So this is the dashboard.
+
+If you go back to resources we can go to the web front end and go to the endpoints and click the endpoint
+
+in order to access the R front end application.
+
+Here you can see the R front end application.
+
+In the home page we see Hello World.
+
+And also we can navigate the weather page.
+
+And this page will be consumed weather data from the API services which is underlying data from the
+
+Redis distributed cache.
+
+If you click the weather, you can see that our weather data retrieved from the API services via service
+
+discovery.
+
+If you refresh this page within about 10s, the data is cached.
+
+After that period, the output cache expires and you will see the new data from the API services.
+
+Here you can see the API service data has changed and this demonstrates how service discovery, front
+
+end API and Redis caching are seamlessly integrated.
+
+At this point you can see the request lifecycle from the dashboard, and if you go to the traces, you
+
+can see that we sent the Get request to the our weather forecast.
+
+And this will be consumed from the API services and API.
+
+Get the data from the cache.
+
+If you go back, the second request comes from the cache without visiting the API services.

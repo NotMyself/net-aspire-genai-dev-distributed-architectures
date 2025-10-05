@@ -1,0 +1,141 @@
+In this video, we are going to explore how the Net Aspire manage the inter service communication within
+
+a cloud native and distributed architecture.
+
+We will look at how the.
+
+Net aspire app host project ties services together using the service discovery names and how our front
+
+end Blazor application call the API project with type HTTP client that automatically finds the right
+
+endpoint.
+
+So before that, let's remember our service discovery mechanism in dotnet aspire.
+
+As you remember that, we said that dotnet aspire can be injected environment variables for containers
+
+and projects.
+
+This time we will focus on the projects and communication from the front end and back end APIs.
+
+In this setup, we said that this is the project, the project dependency and with adding the with reference
+
+to our front end application, we can basically inject endpoint addresses into the our front end application.
+
+You can see in here API servers and web front end.
+
+And with adding TV reference this will be injected our endpoint addresses into the front end application.
+
+By this way, web front end will be consumed and call the API.
+
+Services using the.
+
+Net service discovery mechanism and writing the typed HTTP client classes.
+
+So let's get started and explain on code.
+
+Please open the Visual Studio, go to Sample Project and go to the Program.cs.
+
+Here you can see that our web frontend project will be getting referenced from the API services.
+
+By adding this with reference, we have injected the our API service service endpoints into the web
+
+front and environment variables.
+
+And after adding these environment variables, what is the next step?
+
+The next step is to type HTTP client or web front end Blazor application.
+
+So if you go to the our web Blazor application, you can see that in the program says we have registering
+
+our API client in order to consume API services.
+
+Here you can see that in this line of code we basically registering whether API client and passing the
+
+base address in order to consume our web front end to API services in here.
+
+Let me explain first the weather API client.
+
+This is the API client class that we have stored under the web application.
+
+Here you can see the our weather API client class.
+
+And this is basically the strongly typed and focusing on retrieving the weather data.
+
+Here you can see the get weather async method.
+
+And in this method we basically use HTTP client get from JSON as async enumerable from the weather forecast
+
+into the this endpoint, which is the weather forecast endpoint.
+
+By this way, we fetch the an array of the weather forecast records, and after that iterate these records
+
+and populating and returning our forecast array into the weather forecast variable, which is the record
+
+type.
+
+And as you can see that in this strongly typed weather API client class, we have injected HTTP client
+
+object in order to consume this weather forecast endpoint from the API project.
+
+But where this HTTP client is registering our project, before we are using and injecting this HTTP
+
+client, we have to register it in the program.cs of the web project for that purpose.
+
+If you go back to Program.cs.
+
+At this point, we basically registering HTTP client using the builder services, add HTTP client extension
+
+method and passing the R weather API client, which is a strongly typed client object.
+
+And after that, in the configuration side, we are defining the base address which is indicating our
+
+API service address in order to consume frontend to API services.
+
+So in here the important part is base address.
+
+As you can see that in the base address we give the https plus http.
+
+And after that API services.
+
+So these HTTP plus http means that aspire is service discovery should use Https if available.
+
+If not it is going to look for the HTTP.
+
+And after that here you can see the API services, which is the name as we gave into the repos project
+
+for the orchestrator.
+
+If you go to the Program.cs, you can see that the API service name is identical.
+
+And we are getting reference these API servers into our web frontend And in order to consume these API
+
+services, we are only passing these.
+
+The name in here that means dotnet aspire.
+
+Use these names to inject environment variables or configuration for the URL resolution.
+
+For example, the actual endpoint could be https localhost 7281 at runtime, but the Blazor web application
+
+does not need to care.
+
+It simply calls the weather forecast on the API services, and this will be resolved by the dotnet aspire
+
+with passing the name from the App Host project.
+
+This means you can run multiple services locally or in containers without manually changing URLs or
+
+port numbers each time.
+
+Lastly, after injecting the weather API client, we can use these API client into our weather page.
+
+If you go to components and page.
+
+If you go to the Weather Data razor page, you can see that we injected our weather API client in here,
+
+and after that we are retrieving the forecast from the weather API on initialized async method.
+
+And we can get weather async method and getting the forecast and listing the forecast data into the
+
+R table.

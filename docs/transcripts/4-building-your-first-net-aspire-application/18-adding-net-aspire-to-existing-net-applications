@@ -1,0 +1,239 @@
+In this video, we are going to explore how to add dotnet aspire to an existing dotnet application,
+
+particularly that include web API, Blazor, front end and dependencies like Redis container.
+
+If you have been using Docker compose or manually managing Docker files, you will see how dotnet aspire
+
+simplifies the orchestration, service discovery and cross-cutting configurations.
+
+Here you can see our existing setup.
+
+We need a Redis picking services and we have front end and Aspire microservices.
+
+Before aspire, we generally use Docker Compose for orchestrating our microservice project.
+
+We will right click the our microservices, add Docker files for each microservices, and after that
+
+we write Docker-compose.yml file for the orchestrator to create Docker files and docker compose YAML
+
+files and orchestrate this architecture.
+
+But with using the.
+
+Net aspire, we are going to orchestrate this architecture with adding the.
+
+Net aspire orchestrator into our project and creating the aspire projects, which is a post and service
+
+defaults.
+
+So let's get started.
+
+So please open the Visual Studio.
+
+And I have created a new solution, which is the existing app to aspire and create two microservices.
+
+The first one is API service, which is ASP.Net web API.
+
+Then the second one is web frontend which is the Blazor web application.
+
+So now the typical existing setup will be handled with the Docker files and Docker compose files.
+
+For that purpose, I am going to right click each microservices and add a docker file.
+
+Docker support.
+
+This will be create a docker file for each microservices with all these configurations.
+
+As you can see that this Docker file, including the port numbers and other configurations in here.
+
+And at the same way, I am going to right click the frontend microservices and add the Docker support.
+
+And this will be also again creating additional Docker file for each microservices.
+
+After that, in order to orchestrate these two microservices in a Docker environment, we need Docker
+
+compose YAML files.
+
+For that purpose, I am going to right click the API services and add a container orchestrator support
+
+and creating a Docker compose YAML files.
+
+And I am going to create docker compose YAML files for the API services.
+
+Here you can see that it is creating docker-compose.yml file and adding the API services.
+
+And I am going to follow the same steps for the front end in order to adding frontend into our orchestrator,
+
+which is a docker compose, right click the frontend add container orchestrator support and choose the
+
+docker compose and click the okay button.
+
+Here you can see that this time docker-compose.yml file including these two microservices.
+
+And additionally I need a Redis container.
+
+For that purpose.
+
+I am going to add a distributed cache and give the image name as a redis, and it is not enough.
+
+And after that, we need to configure these microservices and container to set the port numbers into
+
+our Docker compose orchestrator.
+
+For that purpose, I am going to expand these docker-compose.yml file and click the docker compose overwrite
+
+YAML file which including all the port numbers, environment, variables and configurations.
+
+So in here I need also configure my distributed cache which redis and set the port numbers.
+
+As you can see that it is very important the indentation and the hard to manage all these configuration,
+
+including the port numbers and other configurations to managing with the docker compose YAML file.
+
+So this Docker orchestration works well, but it can become complex as your solution grows.
+
+As you can see that we only have three microservices and the configuration is almost the whole page.
+
+But dotnet aspire replace that overhead with more integrated approach, letting your dotnet solution
+
+itself orchestrate containers, reference and environment variables in a C-sharp code.
+
+So for that purpose, if you want to shift from Docker compose to dotnet aspire, we will need to add
+
+dotnet aspire orchestrator into our project to handle all these configurations.
+
+So for that purpose, I'm going to delete the docker compose YAML files and delete all Docker files
+
+inside of each microservices.
+
+Instead of this YAML complexity, I am going to right click the API services and add a dotnet aspire
+
+orchestrator project.
+
+This is the scaffolding code from the Visual Studio, but you don't need to use this orchestrator support.
+
+Instead of that, you can right click and add a new project and you can add a spire projects.
+
+For example, if you search for the spire and you can see that there is a spire, a post project and
+
+service default projects that you can add these projects manually.
+
+But I am going to use right click the API services and add a dotnet spire orchestrator support and select
+
+the resolution and location.
+
+Click the okay button and this is going to create a post and Service defaults C-sharp project.
+
+So after clicking okay this is going to scaffolding our code with adding the dotnet spire projects.
+
+These are the post project and Service defaults projects.
+
+So at this point our app post project is the orchestrator project and do the same thing.
+
+What the docker compose do managing containers, environment variables and service discovery.
+
+And this is a starter project and getting reference from the other projects.
+
+And we have also service default projects, which is the shared config project that manage resilience,
+
+service discovery and telemetry across all distributed microservices.
+
+As a result, you no longer rely on the Docker compose YAML file for orchestration.
+
+Selection.
+
+Instead, you run the Epos project and this will be orchestrated and spin up the containers and references
+
+with using the dotnet aspire distributed architecture.
+
+So now let me examine the Epos project.
+
+If you double click the this Epos project, you can see that we have only API services.
+
+And if you go to Program.cs, you can see that we have only added the API services because we have started
+
+the.
+
+Net aspire from the API services.
+
+If you want to include front end microservices into our distributed architecture, you have two options.
+
+The first option, you can right click the front end and add a dotnet aspire orchestrator support.
+
+And the second option you can write manually in here.
+
+With adding the project to our front end, I'm going to choose the first option because this will be
+
+added required NuGet packages and referencing.
+
+If you add a dotnet Aspire Orchestra support with clicking the our front end project, it is going to
+
+ask that there is already aspire a post project for the orchestrator.
+
+Do we want to update it?
+
+Adding the front end project for its orchestration?
+
+Click the okay button and this is going to adding one line of code, and it is not enough because it
+
+is going to also including a post project and adding this reference, which is the front end application.
+
+And also if you look at the service defaults project, it is already getting reference from the front
+
+end application in order to adding all cross-cutting concerns.
+
+And this service defaults applying to front end microservices from the aspire.
+
+So these things can be handled by the dotnet aspire orchestration automatically.
+
+And if you go to efforts and program.cs, you can see that we have distributed application with two
+
+projects.
+
+At this point, we can edit this container into our distributed architecture with writing the one line
+
+of code wielder that address this and this extension method need a NuGet packages, which is the hosting
+
+integration.
+
+I am going to right click the dependencies of the App Host project, and in here you can see that there
+
+is a new button which is the add.
+
+Net aspire packages.
+
+By clicking this button, you can filtering our.
+
+Net aspire hosting packages and you can see all backing services can be integrated or distributed.
+
+Application I am going to choose release packages and install these aspire hosting resource packages
+
+into my project.
+
+By this way, our Program.cs is now available for Azure this extension method.
+
+After that, we can configure our dependencies and relationships between distributed microservices.
+
+First of all, I'm going to assign a variable for the API services.
+
+And after that I'm going to configure our front end application with external Https and with reference
+
+for the cache and API services.
+
+Here you can see that I have configured for the external HTTP endpoint for front end project, and adding
+
+reference and wait for cache and API services.
+
+By this way we can inject connection string for cache and service discovery and endpoint for the API
+
+services.
+
+And I'm going to run this a post project, right click Set Startup Project and run Https in order to
+
+activate all these architecture in dotnet aspire environment.
+
+As you can see that we have successfully shifting from Docker Compose to Aspire project and running
+
+our distributed application in a dotnet aspire environment.
+
+Here you can find all resources successfully running into our distributed environment.

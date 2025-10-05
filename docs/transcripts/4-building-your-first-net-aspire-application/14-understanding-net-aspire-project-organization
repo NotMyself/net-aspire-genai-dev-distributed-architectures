@@ -1,0 +1,123 @@
+In this video, we are going to examine an Understanding the Net Aspire project organization for our
+
+starter application.
+
+We will take a detailed look how the.
+
+Net aspire solution is typically laid out for the starter application.
+
+The Net aspire sample solution typically contains four main projects.
+
+These are the Aspire Sample app, host, Aspire Sample Service defaults, Aspire Sample API service,
+
+and Aspire Sample Web Project, and each serve a specific function.
+
+A host for the orchestration service.
+
+Default for shared configuration and API service for data exposure, and web for the front end UI.
+
+Here you can see our starter application project organization.
+
+These two are the aspire project Host and Service defaults.
+
+And these are the our distributed application including the front end and API service.
+
+Net project and Redis container.
+
+So let's dive into each project role.
+
+I'm going to start with the aspire project and a post project.
+
+So Aspire Sample Warehouse Project is a central hub for all projects and services, brings all the projects
+
+together.
+
+This is an orchestrated project designed to connect and configure the different projects and services
+
+of our distributed application.
+
+And the orchestrator should be set as startup project, and it depends on the aspire Sample API service
+
+and Aspire sample web projects.
+
+After that, we can continue with the second aspire project, which is the service defaults.
+
+So Aspire Sample Service Defaults is a shared project that holds the cross-cutting configurations.
+
+These are the resilience and telemetry code, such as the custom logging and distributed tracing settings.
+
+And it also include service discovery defaults so you can easily connect microservices without repeating
+
+boilerplate code.
+
+And it has also including health checks, other best practices baked in so you can manage the core behaviors
+
+like logs, metrics, or circuit breakers in a single place instead of scattering them for all multiple
+
+projects.
+
+And both API servers and web project should be getting reference from this project.
+
+After that, we can continue to the next project, which is the API services.
+
+API services is an ASP.Net core minimal API project, and it exposes endpoints that the web project
+
+can call, for example, to fetch the weather data.
+
+It also depends on the shared service defaults project for cross-cutting concerns like logging, tracing,
+
+and service discovery, and typically include the files like Program.cs for the top level ASP.Net core
+
+configuration, application settings, JSON file, and a minimal set of routes for data retrieval.
+
+By referencing the service defaults, it inherits the best practices from the.
+
+Net aspire, ensuring the consistency, resiliency, and telemetry across the solution.
+
+And the last project is web front end project.
+
+And now I am going to explain our aspire sample web project.
+
+Finally, Aspire Sample Web Project is a Blazor project and how those UI components, layouts and pages.
+
+It includes home and weather razor page and also it is depends on the service defaults for the same
+
+cross-cutting configurations to the API service and front end project, and it communicates with the
+
+API services like via strongly type HTTP client or minimal calls to fetch the data, and it is typically
+
+discovered via dotnet aspires built in service discovery.
+
+In short, web project is the user facing and pulling the data from the API and benefiting from the
+
+consistent logging and telemetry configured in service defaults.
+
+So now I am going to explain the project dependencies between Aspire project and our distributed application.
+
+Here you can see the our aspire project and the are distributed application and dependencies.
+
+First of all look at the iOS project app project.
+
+Get reference from the API project and the web project for the orchestration, and after that, our
+
+distributed application API service and frontend project getting reference from the service defaults
+
+for performing the cross-cutting concerns in one place.
+
+So to summarize these relationships, I am going to explain that a post project basically knows about
+
+the API service and web project, orchestrating them as part of the distributed application and run
+
+them collectively.
+
+When we hit the F5 in the App Post project in a dotnet aspire distributed application environment,
+
+and after that, our distributed microservices, including API service and web project, both getting
+
+reference from the service defaults for shared logging, tracing and health checks.
+
+They do not directly reference each other unless you explicitly set.
+
+Instead, they discover each other through the service discovery defined in the post project.
+
+By following this pattern, each project remains modular and focused on its specific role.

@@ -1,0 +1,123 @@
+In this video, we are going to explore dotnet aspire starter projects and we will start to examine
+
+dotnet aspire app host project.
+
+This project acts as an orchestrator defining how your microservices, baking services and integrations
+
+come together into your distributed cloud native applications.
+
+And we will explore the project file, C-sharp project file and also Program.cs.
+
+For that purpose, please open the Our Visual Studio and go to the Our Aspire sample solution and go
+
+to the App Host projects.
+
+If you double click this project file, you can see the C-sharp project file in here.
+
+So look at the example of the our project file of the iOS project.
+
+As you can see that it is starting with the SDK.
+
+SDK is aspire iOS and SDK.
+
+This is the custom SDK provide orchestration and container management features specific to dotnet aspire.
+
+And another important feature is is aspire host is true.
+
+These attributes tells the aspire that this is the project responsible for running everything else,
+
+and after that you can see the project references inside of the app project.
+
+We say that app project getting reference from the API service and web projects, meaning that Apple
+
+knows about our distributed microservices.
+
+These are the our web project and API project.
+
+By this way, this can be orchestrated our distributed microservices and containers.
+
+And after that you can see the packages in here.
+
+The first package is aspire hosting a post and aspire hosting readings.
+
+And these are integrated containerized hosting logic and reduce functionality into the post project.
+
+So now I am going to open the program.cs of the Post project in order to understand how to orchestrate
+
+these containers and projects.
+
+If you double click, the program says you can find the our distributed Architecture definitions.
+
+So basically it is starting with creating an AI distributed application builder, which is a foundation
+
+for modeling or distributed application.
+
+And after that we use builder dot Atheridis function.
+
+Adding a Redis container resource which named as a cache.
+
+Aspire sets up the container behind the scenes, and after that we are adding the project, which means
+
+that register or minimal API project labeled the API services for the service discovery.
+
+And after that we are again adding a dotnet project in here.
+
+Register our Blazor frontend application and giving the name as a web frontend.
+
+And after that we configure these web frontend.
+
+For example with external HTTP endpoints, expose the ports.
+
+So you can browse this frontend and we have with reference and wait for for the cache services.
+
+This is twice the frontend to the Redis cache, ensuring it is started before the frontend attempts
+
+to connect.
+
+And also we have with reference and wait for for the API services.
+
+This is the frontend reference, the API services which also must be running first.
+
+And lastly we are build and running the distributed application using the dotnet aspire and App.post
+
+project.
+
+So now I am going to set a startup project and run this distributed application.
+
+How the services are up and running according to a post.
+
+Wait for and with reference methods, you can see that first of all, it is starting API service cache.
+
+And lastly it is started web frontend and this is the aspire dashboard.
+
+And first of all cache is running the our application as we run the cache, and after that run the API
+
+services.
+
+And lastly, run the web front end.
+
+And if you open the web front end and if you scroll down, you can see the environment variables in
+
+here, you can see the environment variables for the connection string, redis cache.
+
+And if you scroll down you can see the environment variables for the connection of the API services
+
+from the web front end environment variables.
+
+So as a result, we can say that a Foss project is a centralized orchestration and instead of juggling
+
+separate Docker compose files or manually launching each services, we use dotnet aspire a post project
+
+on behind the scenes.
+
+For example, it is adding a Redis container into our Docker desktop.
+
+Here you can see the Docker desktop and you can see the running container readings in here.
+
+This is started from the dotnet aspire and we don't have any configurations about the Redis containers.
+
+All these orchestrated and managing from the dotnet aspire it manage the containers and microservice
+
+projects and dotnet aspire inject the environment variables for service discovery so each project can
+
+find the others without using the static IP ports or any other configurations.

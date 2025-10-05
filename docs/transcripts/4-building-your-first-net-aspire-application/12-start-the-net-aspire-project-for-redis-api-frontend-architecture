@@ -1,0 +1,67 @@
+In this section we are going to build your first dotnet aspire application.
+
+We will create a starter application template in Visual Studio, add a radio sketch, develop a simple
+
+API and plugin a front end client to consume that API.
+
+Modern cloud native application often relies on multiple services including database cache, message
+
+broker, or other APIs.
+
+DotNet aspire simplifies the connections between these services, letting you focus on business logic
+
+rather than configuration headaches.
+
+Here you can see high level diagram of the application that we are going to create.
+
+This is very basic distributed application.
+
+We have a Redis cache and containerized by dotnet aspire.
+
+And we have a API service project that expose endpoints that the front end use to fetch or store data,
+
+and front end provides a user interface fetching data from the API and displaying it on the page.
+
+So we will develop this distributed architecture with dotnet aspire project templates.
+
+So in this quick start we are going to create a brand new dotnet aspire starter application.
+
+Check predecessor caching solution.
+
+Build an API project within the solution and see how exploit handled the service discovery and connect
+
+everything that means API, front end and Redis under one solution, all orchestrated by The.net aspire.
+
+So now let's creating a dotnet aspire template for that purpose.
+
+Please open the Visual Studio and click the Create New project.
+
+In this window we are going to select a project template.
+
+Here you can see that dotnet Aspire Starter application project template.
+
+This is the project template for creating dotnet aspire application with Blazor web frontend and web
+
+API backend including the Redis caching.
+
+So please select this project template, double click and give the solution name as a aspire sample
+
+and set a location.
+
+And after that click the next button and configure our project.
+
+I am going to leave it as it is for this configuration.
+
+This is the framework as a.
+
+Net nine and you can configure Https and also check use Redis for caching.
+
+Require a supported container runtime.
+
+That means we need to start Docker desktop.
+
+So after leaving as it is this configuration, you can click the create button and Visual Studio will
+
+then scaffold a new solution with dotnet aspire configurations baked in and giving you a head start
+
+on building microservices.

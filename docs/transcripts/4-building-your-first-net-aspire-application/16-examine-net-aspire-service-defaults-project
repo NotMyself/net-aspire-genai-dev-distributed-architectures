@@ -1,0 +1,125 @@
+In this video we are going to examine dotnet aspire service default projects, and we will see how these
+
+shared projects enforce the consistent configuration across all distributed microservices covering the
+
+resilience, service, discovery, logging, opentelemetry and so on.
+
+For that purpose, please open the Visual Studio and go to our Aspire Sample solution and open the aspire
+
+sample service defaults C-sharp project.
+
+If you double click this project file, you can see the C-sharp project file.
+
+And if you examine this file, you can see that the important attribute is is aspire.
+
+Shared project is true.
+
+This attribute tells that this is the shared project, not a standalone application.
+
+And you can see the packages in here.
+
+These packages references unify how microservices handle logging, tracing and fallback strategies.
+
+So that means in this project we will cover the resilience, service discovery, opentelemetry and other
+
+cross-cutting concerns.
+
+So how it integrates other microservices.
+
+So if you go back to our slide, you can see that our service default projects getting reference for
+
+the distributed microservices, for that purpose, we can go back to our code and go to the, for example,
+
+our microservices, which is the API project.
+
+If you double click the API service project, you can see that it is getting referenced from the service
+
+defaults projects.
+
+And at the same way, if you look at the front end web project, it is also getting referenced from
+
+the service defaults projects, and this ensures that both API and front end share identical resilience
+
+telemetry settings by getting reference from the service defaults.
+
+And also you can open the program.cs of these microservices.
+
+For example, go to API service, go to Program.cs and you can see that there is a builder dot add service
+
+defaults extension method.
+
+These extension methods comes from the service defaults projects and register everything that we need
+
+for the cloud.
+
+Native telemetry logs, traces, metrics, service discovery for the cross microservice communication
+
+and resilience features such as the retry policies and circuit breakers on HTTP calls.
+
+This extension method also including our web project.
+
+If you go to Program.cs, you can see that add service defaults extension method, also including in
+
+displays.
+
+So if you go to the this definition right click and go to definition.
+
+You can see that this comes to the extension class under the Service Defaults projects.
+
+And in the extension method we have extension method which is the add service defaults including the
+
+builder, and this will be provided Opentelemetry Healthcheck.
+
+Service discovery and configure the HTTP client for the Resilience and service discovery operations.
+
+So this is the centralized place that we are.
+
+Configure all distributed microservices and apply all these configurations in one place.
+
+And we will avoid the duplicating boilerplate code.
+
+By this way, you don't need to set up logging or tracing from the scratch service.
+
+Defaults handle that, providing sensible defaults for logs, metrics, and distributed tracing that
+
+you can examine all these extension methods in this extension class under the service defaults.
+
+Here you can see the Opentelemetry settings, and you can see the default health checks.
+
+And you can see the map default endpoints in order to provide health endpoints, and so on.
+
+This is all common for each distributed microservices which available for the dotnet aspire ecosystem.
+
+So how we can inclusion microservices into the service defaults and.
+
+Net aspire.
+
+Basically dotnet aspire automatically ensures that if a project referenced service defaults and that
+
+project is part of the application host orchestration.
+
+The service defaults code is integrated at runtime and automatically.
+
+So that means if you right click and add new microservices, this will be automatically include to dotnet
+
+aspire and service defaults.
+
+And basically it is automatically adding the service defaults into the API project and also Program.cs.
+
+It is automatically add service defaults into the code.
+
+And of course after adding service defaults, if you scroll down we link the application.
+
+We also map the default endpoints.
+
+These extension methods also comes from the Or service defaults extensions in order to mapping health
+
+endpoints for each microservices.
+
+So these are the added automatically by the.
+
+Net aspire.
+
+Whenever we are adding any microservices into our distributed environment using the dotnet spire in
+
+order to provide central crosscutting concern configurations.
