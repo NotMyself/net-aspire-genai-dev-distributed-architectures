@@ -1,0 +1,77 @@
+In this video, we are going to learn the prerequisites for this course, how to access the source code
+
+and where to find the course slides.
+
+First, let's talk about the prerequisites.
+
+In order to follow this course effectively, there are a few tools that you need.
+
+The first one is dotnet nine, dotnet nine is the foundation of everything we will be doing in this
+
+course.
+
+It includes the.
+
+Net aspire framework as part of the default setup, which is we will leverage for building cloud native
+
+distributed applications.
+
+So during the course we use Net nine features extensively.
+
+You can follow the course greater than Net nine versions.
+
+And the second tool that we need Visual Studio 2022 or later we will use Visual Studio 2022 or later
+
+editions as your primary IDE.
+
+Make sure to include ASP.Net web development and the dotnet aspire workload during the installation.
+
+We will use it for coding, debugging, and testing our cloud native distributed application development.
+
+And after that we need Docker Desktop.
+
+Docker desktop is essential for containerizing, our application and cloud native baking services.
+
+DotNet aspire framework used Docker Desktop on behind the scenes in order to run distributed application
+
+in a containerized environment.
+
+So that means instead of the configuring manually Docker compose YAML files, we will rely on dotnet
+
+aspires built in orchestration.
+
+So you can download and install these tools.
+
+You can use the link on the slide to download these prerequisites.
+
+So please install and download these prerequisites before proceeding to course.
+
+Next we will talk about the source code.
+
+All the source code written and demonstrated in this course is available on GitHub.
+
+This course comes with from a live GitHub repository that dotnet community develop and grow together.
+
+I'll provide the repository link on the slide.
+
+Feel free to download, explore and even contribute to it.
+
+You can also download the source code section by section, every section code separated in this repository.
+
+By this way, you can jump to the section and continue developments where you left without hesitating
+
+to starting from the beginning.
+
+And lastly, the course slides.
+
+Each lecture comes with detailed slides summarizing the key points and concepts.
+
+These slides are available for download in this Lecture Resources section that you can see on the slide
+
+picture.
+
+How you can download from the lecture resources.
+
+We can click here and download the resources.
+
+I highly encourage you to download and review them as you progress through the course.

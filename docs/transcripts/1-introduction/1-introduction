@@ -1,0 +1,181 @@
+Hi, my name is Mehmet Özkaya and welcome to my course DotNet Aspire and Generative AI Developing Distributed
+
+Architectures.
+
+During the course, we will develop AI powered distributed architectures using dotnet aspire and generative
+
+AI to develop E-shop catalog and basket microservices integrate with the banking services including
+
+PostgreSQL, Redis, RabbitMQ, Keycloak, Olama and Semantic Kernel to create intelligent eShop solutions.
+
+So now let's take a high level look at the journey throughout the course.
+
+First of all, we will start with cloud native distributed architecture.
+
+That means we will begin by discussing the core principles of the cloud native applications, what they
+
+are, why they matter, and how to design microservices that align with the Twelve-factor application
+
+methodology.
+
+And after that we will learn dotnet aspire framework.
+
+We will discover how dotnet aspire simplifies building distributed enterprise ready applications by
+
+providing a clean project structure and built in solution for configuration logging and so on.
+
+And after that we will develop our eShop microservices.
+
+That means we will then start building our eShop system, developing multiple microservices baking services
+
+including the AI features.
+
+And after that we will deploy to Azure Container Apps.
+
+We will containerize and deploy these microservices using the dotnet aspire and deploy to Azure Container
+
+apps.
+
+And we will use Azure up and down commands to simplify provisioning and teardown.
+
+And lastly, we will start dotnet generative AI development.
+
+And we will explore the Microsoft Extensions AI package and the Semantic Kernel library.
+
+In order to integrate advanced AI features into our applications.
+
+Use case will be customer support, Q&A using the ulama and product semantic search leveraging the vector
+
+database.
+
+So now let's examine our course project.
+
+And our course project will be the eShop distributed architecture.
+
+And our first step to create two core microservices.
+
+These are the catalog and basket.
+
+And we will start with the catalog microservices and store product data in a PostgreSQL relational database
+
+and implement Entity Framework core migrations and Crud operations for the products.
+
+And we will expose HTTP endpoints for product listing details and price updates.
+
+And after that we will start the developing basket microservices and use Redis Distributed cache to
+
+store customer basket data.
+
+And we will also expose endpoints to create, update and delete basket, storing the basket in a JSON
+
+format.
+
+This approach is fast and scalable and perfect for shopping cart data, and after that we will continue
+
+microservice communications with dotnet aspire.
+
+And we have synchronous communication and asynchronous communication catalog and basket Use.net aspire
+
+to discover each other's endpoints without hardcoding URL.
+
+For example, when adding an item to the basket, the basket service goes to the catalog in order to
+
+fetch the latest product price synchronously, and after that we will implement asynchronous messaging.
+
+RabbitMQ handles the publish subscribe pattern for the events like product price changes.
+
+That means when the catalog updates a product price, it publishes product price change integration
+
+event to RabbitMQ and then basket will consume these product price change integration event from the
+
+RabbitMQ and stay synchronized with the catalog whenever a user add an item to their basket.
+
+So after that we will continue with the authentication and security and we will secure our microservices
+
+with using the Keycloak secure basket endpoints with Keycloak using the barrier tokens.
+
+That means we will create Keycloak definitions including realm, client, and test users in order to
+
+protect basket endpoints with barrier tokens.
+
+And after that we will continue the front end development.
+
+Our e-commerce solution need a user interface and we will create Blazor Web application to build Blazor
+
+Application and Razor page that show the product listing and basket functionality, and we will use
+
+HTTP client in order to call Catalog and basket microservices.
+
+And after that we will deploy to Azure Container app the entire application.
+
+Once our microservices are working locally, we will deploy to Azure and we will start with containerization.
+
+DotNet aspire can containerize each microservices and we push them to the Azure Container Registry or
+
+let Azure handle the building image.
+
+And we will use Azure up and down command in order to deploy the entire application to the Azure Container
+
+applications.
+
+And after that we will adding generative AI features.
+
+That means we will use Microsoft Extensions AI package with the Semantic Kernel library, in order to
+
+integrate advanced generative AI capabilities directly into our dotnet microservices and distributed
+
+application.
+
+First of all, we use Ohyama for local LLM inference.
+
+Integrate the models like Llama or Fei, and we will provide customer support in chatbox.
+
+User can ask the product related questions and the AI respond with relevant information from our product
+
+catalog.
+
+And after that we will use vector databases, store embeddings for semantic search, and implement the
+
+rake workflow to user, get AI powered product recommendation and search result based on the similarity
+
+queries, and we will implement semantic product search operation.
+
+Instead of relying on simple keyword matching, we will generate embeddings for product description
+
+using the Ulama alumni model and store them into the vector database and query them via cosine similarity,
+
+and this approach significantly enhance the search relevance and delivering the better user experiences.
+
+Within these developments, we can successfully integrate AI features into our E-shop distributed applications.
+
+So why you should learn to build AI powered distributed systems?
+
+First of all, there is a growing demand for scalable, intelligent applications that can adapt to ever
+
+changing business needs.
+
+And also, modern applications aren't just about solving static data.
+
+They are event driven, cloud native, and responsive to the real time updates.
+
+Additionally, AI is transforming how we interact with the software, whether it's a chatbots, personalization,
+
+or semantic search.
+
+Generative AI has opened the doors to novel user experiences.
+
+Combining the power of microservices with AI ensures that your applications remains resilient, easy
+
+to scale, and deeply intelligent.
+
+Also, I can say that this course is very practical.
+
+About 95% of the lessons will involve you coding along with me on this project.
+
+So by the end of this course, you will gain a real world experience and will have a solid understanding
+
+of the dotnet aspire and dotnet generative AI to design, develop and deploy AI powered distributed
+
+enterprise applications.
+
+I hope you will join me on this journey and develop this application with me.

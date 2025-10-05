@@ -1,0 +1,101 @@
+In this section we are going to learn what is cloud native distributed architectures.
+
+We will cover banking services and using LMS and vector database as a cloud native banking services.
+
+Let me start with the defining cloud native.
+
+When we say cloud native, we are referring to applications designed from the ground up to leverage
+
+cloud platforms and practices, rather than simply migrating existing solutions to the cloud.
+
+This means built for the cloud.
+
+That means designed to benefit from elasticity, on demand resources, and automated scaling.
+
+And it is also embraced services and containers, breaking down large applications into smaller units
+
+and packaging them into containers for consistency.
+
+And it is also providing automation and CI CD.
+
+It is relying on DevOps pipelines for continuous integration, delivery and deployments.
+
+So let's understand what makes an architecture as a distributed.
+
+A distributed architecture is one where the functionality is spread across multiple independent services
+
+that communicate over a network, and this separation of concerns offers independence.
+
+Each service can be developed, deployed and scale independently, and it comes with reliability.
+
+If one service fails, others can continue operating, reducing the system wide downtime and also provide
+
+scalability.
+
+Services handling heavy loads can be scaled up or down without affecting the others.
+
+So now let's understand the key characteristics of the cloud native distributed architectures.
+
+And the first key characteristic is microservices.
+
+In a cloud native world, the application is broken into logical unit, which is called microservices,
+
+and each microservices represent a bounded context focusing on specific business capability like catalog,
+
+basket and ordering, and it has its own data store and run independently, and microservices communicate
+
+with each other through well-defined APIs or event driven messaging.
+
+And the second key characteristic is containers and containerization.
+
+Each microservice is packaged in a container, ensuring consistent environments across development,
+
+staging, and production.
+
+Containers package an application with its dependencies, making them lightweight and portable and ensuring
+
+the same experience in development, testing and production.
+
+And the third key characteristic is orchestrators and dynamic orchestration.
+
+Tools like Kubernetes or other container applications manage the scaling, high availability, service
+
+discovery, and self-healing.
+
+It provides isolated environment, and crashes in one container don't necessarily affect others, improving
+
+the reliability.
+
+And after that we can continue the communications.
+
+Communications can be HTTP, gRPC communication over the network protocol and including the service
+
+discovery features.
+
+And we have banking services that are external component.
+
+The application depend on and provide to support various functionality.
+
+And we have scalability that has auto scalability features by orchestrators including different cloud
+
+providers.
+
+And the important key characteristic is DevOps CI, CD and GitOps.
+
+DevOps practices bring the development and operation together and for seamless collaboration, it has
+
+continuous integration, which is automatically build and test our application whenever code changes
+
+are merged and it has continuous delivery and deployment, ensure the new feature or fixes can be deployed
+
+rapidly and reliably.
+
+And lastly, we have monitoring and observability in cloud native distributed architectures.
+
+Observability is vital.
+
+It is gathering the central logs and metrics from the tools like Prometheus and Grafana.
+
+And it also includes distributed tracing help to trace a single transaction as it travels across multiple
+
+microservices.

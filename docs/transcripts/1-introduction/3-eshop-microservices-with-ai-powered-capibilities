@@ -1,0 +1,67 @@
+In this video, we are going to see our course project and we will explore how to set up and run our
+
+eShop microservices.
+
+Here you can see the our solution.
+
+We have three folders.
+
+These are the aspire which including the.
+
+Net aspire, Air Force and Service default project.
+
+And we have services folder including our backend microservices basket and catalog microservices.
+
+And we have front end folder which is our client web application that can consume internal microservices.
+
+So if you look at the our Epos project and go to the Program.cs, you can see that we are going to activate
+
+these backend services, including the Postgres distributed cache RabbitMQ Keycloak.
+
+And after that we will activate our projects catalog basket and web application into our dotnet aspire
+
+environment.
+
+And if you right click the post and set a startup project and start your Docker desktop, you can run
+
+our dotnet aspire distributed application in order to see how we can consume the catalog microservices
+
+from the web application.
+
+Here you can see the dotnet aspire dashboard that we are going to activate our backend services and
+
+projects.
+
+So at this point we can go to the web application that is external API, and if you open the Https endpoint
+
+to web application, you can see our Blazor client application.
+
+At this point, I am going to retrieve the products from the catalog microservices and go to the products
+
+page.
+
+Here you can see the products retrieved from the catalog microservices that we can see and listed in
+
+here.
+
+So if you refresh this page this is again go to the catalog microservices.
+
+But if you refresh within the five seconds this will be retrieved from the Redis output caching.
+
+You can also confirm and see net speed traces from the dashboard.
+
+If you go to the traces of the dotnet aspire dashboard, you can see that the first HTTP get request,
+
+retrieve the products from the catalog microservices and set the radius output cache.
+
+And if you go back and go to the second HTTP get operation, you can see that this time we will retrieve
+
+the data from Redis output caching.
+
+And you can also examine all resources console, log and structured log into our application, including
+
+our microservices and baking services from the dotnet aspire dashboard.
+
+So during the course we will develop all these microservices client application and dotnet aspire orchestration
+
+with together and step by step.
