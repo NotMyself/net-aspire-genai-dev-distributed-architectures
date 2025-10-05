@@ -1,0 +1,149 @@
+In this video, we are going to deep dive into dotnet aspire orchestration.
+
+Before we dive into code, let's define the core terminology about dotnet aspire orchestration.
+
+And the first terminology is app model.
+
+This is your master blueprint for the distributed application, and it declares everything your solution
+
+needs from microservices to databases.
+
+And the second one is App Host Orchestrator, which is a special dotnet project typically named App.post.
+
+And that sets up and run your entire solution.
+
+And another terminology is resources.
+
+Anytime you manage like an ASP.Net core web project, a Redis cache, or a Docker container.
+
+And another terminology is integration, which is a way to quickly add a service like Reddis or Postgres
+
+throughout the NuGet packages.
+
+So you don't have to write a lot of boilerplate code.
+
+And another terminology is reference, which is expressed as a dependency, for example, a front end
+
+project that reference a Redis cache.
+
+Sketch.
+
+Understanding these terminology will help you read the code and conceptualize how the.
+
+Net aspire orchestrate your distributed application.
+
+So now let's start the first one which is defining the app model in dotnet aspire.
+
+Defining the app model means describing the resources like microservices and external services and their
+
+relationships.
+
+This happens in your apps project.
+
+You can see an example code in here.
+
+We basically start with the distributed application Dot Create Builder, which returns a distributed
+
+application builder that you can use to declare your resources.
+
+Here you can see the space that we are going to put a resource and relationships in.
+
+Here we can connect microservices to databases, caches or external services.
+
+And lastly we call builder will run.
+
+Aspire automates provisioning, deploying, configuring and running everything in the correct order.
+
+So the second one is app Host project.
+
+The app host project is a orchestrator project where you physically place your application model code.
+
+That means in the previous slide, code should be include in this post orchestrator project.
+
+And here you can see the project file.
+
+According to project file.
+
+You can see that there is some property about is aspire host as a true.
+
+And it tells the dotnet aspire that this project will orchestrate other resources.
+
+And it has also some NuGet packages which is the aspire hosting post NuGet packages that provide the
+
+necessary APIs to define application model.
+
+And it is also an aspire post SDK includes build task that handle the containerization and more.
+
+So now let me show you a concrete example inside of this a post project Program.cs file.
+
+As you can see in here, we basically start with creating a distributed application.
+
+And after that we use add radius method in order to set up radius container which resource name as a
+
+cache.
+
+And after that we use add project method in order to include API services and web frontend.
+
+API service is a dotnet project resources like ASP.Net core backend, web API project and Web frontend
+
+is a.
+
+Net project resources like Blazor front end application.
+
+And after that we configure this front end application with using the with external HTTP endpoints.
+
+This expose ports for the front end so users can access it in their browser.
+
+And we have some references and dependencies.
+
+Here you can see the with reference cache and wait for cache.
+
+This line of codes basically provide.
+
+The front end project depends on redis cache, and must wait until the redis spin up and fully up before
+
+starting.
+
+And here you can see again with reference and wait for for the API services.
+
+That means the front end project depends on the API services, so it must wait for the to be ready to
+
+API service is running before starting the web front end.
+
+So after that, finally we will building and running the application that generate a final container
+
+setup and launch all resources in the correct order.
+
+After that, I'm going to explain the built in resource types.
+
+There are some add methods and these are the pre-built methods that we are going to use when configuring
+
+our app post project in dotnet aspire.
+
+You can add various resources into your app post project.
+
+The first one is Add project which is referenced a dotnet project within your solution.
+
+And the second one is add container.
+
+Any Docker image resources you want to bring into your ecosystem.
+
+And also we can add executable think you can add Node.js application or other executables you might
+
+rely on.
+
+And lastly we have add parameter which pass external parameters like environment variable or secrets.
+
+We can say that we will define app model in the app host project.
+
+And after that we can add and configure resources like microservice project cache databases using the
+
+built in integrations.
+
+And after that we put reference and wait for method to express the dependencies and correct startup
+
+order.
+
+And finally we build and run dotnet aspire automatically launch the containers, orchestrate the networking
+
+and inject the environment variables so everything is connected and ready to go.
