@@ -1,0 +1,49 @@
+In this video we are going to learn baking services for cloud native architectures.
+
+Baking services are the external resources or components that cloud native applications depends on for
+
+their operation.
+
+They provide to support for various functionalities such as data storage, messaging, caching, and
+
+authentication in a cloud native architecture.
+
+Baking services like databases, messaging systems and caching services are treated as attached resources.
+
+These services are external to the application and can be swapped or replaced without changing the application's
+
+core logic.
+
+In a cloud native architecture, baking services are decoupled from the application themselves, promoting
+
+flexibility, scalability, and easier maintenance.
+
+So here you can see an illustration of showing the various baking services in a cloud native setup.
+
+For example, you can see databases, SQL and NoSQL databases used for persistent storage.
+
+Here you can see distributed caching services like Reddis or memcached are used to cache data as a backing
+
+services, and here you can see message brokers systems like RabbitMQ, Kafka or AWS SQS facilitate
+
+the asynchronous communication and here you can see events, streaming, object storage, authentication
+
+and authorization services.
+
+Tools like Keycloak or AWS Cognito handle the authentication and authorization.
+
+So now let's examine our backing services for our distributed application.
+
+Here you can see the catalog using the PostgreSQL relational database as a backing services for database
+
+operations.
+
+And we have Redis for the basket as a backing services.
+
+Redis is used as a distributed cache to improve the performance and scalability of the basket microservices,
+
+and we use RabbitMQ for asynchronous communication that facilitates asynchronous communication between
+
+microservices, and we use Keycloak for identity.
+
+Microservices and Keycloak handle authentication and authorization, providing and securing basket endpoints.

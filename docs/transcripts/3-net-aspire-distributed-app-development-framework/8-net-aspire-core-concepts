@@ -1,0 +1,135 @@
+In this video we are going to learn dotnet core concepts.
+
+DotNet aspire has three main concepts.
+
+These are the orchestration, integrations and service discovery.
+
+Let me start with the orchestration in dotnet aspire.
+
+Orchestration in dotnet aspire is all about automating how your microservices are started, scaled and
+
+managed.
+
+That means it provides automating container management.
+
+Each microservices and it is required.
+
+Backing services are containerized automatically.
+
+DotNet aspire is to automate container based deployments without requiring manual Docker files or complex
+
+docker-compose.yaml setups for each microservices.
+
+When you run an aspire project, it automatically orchestrates your containers and baking services so
+
+they all spin up in a union way.
+
+And the second orchestration feature is Environment Awareness.
+
+Aspire.
+
+Adjust these configurations for development, staging or production environments, ensuring Inconsistencies
+
+at every stage of deployment.
+
+Aspire uses environment configuration to decide what services to start and how to configure them.
+
+This means your development team can run a fully containerized setup locally, and also it includes
+
+service dependencies.
+
+If a microservice needs to wait for a database to spin up.
+
+Aspire can coordinate that.
+
+By this way, microservices don't fail on startup because their dependencies aren't ready.
+
+And another feature is scalable infrastructure.
+
+By relying on orchestration, The.net aspire makes it straightforward to scale individual microservices,
+
+whether you are using Docker, Kubernetes, or Azure Container apps.
+
+Aspire manage the foundational scripts and tooling, letting you focus on writing code rather than dealing
+
+with the container complexities.
+
+So when you run an aspire project, it orchestrates all the moving parts for you, letting you concentrate
+
+on building features rather than wrestling with the infrastructure details.
+
+And the second core concept is integrations in.
+
+Net aspire, and it has come with the built in connectors.
+
+Net aspire includes pre-built integrations with common Cloud and on premise services such as databases,
+
+caches, message workers, and identity providers.
+
+And this reduces the boilerplate code required to configure each service in your application.
+
+Common services like PostgreSQL, Redis, RabbitMQ, and Keycloak can be added with minimal code.
+
+No extra Docker files needed.
+
+And also it comes with the crosscutting features, and the framework also provides default setup for
+
+the logging, monitoring and telemetry that is saving time and promoting consistent patterns across
+
+different microservices.
+
+You don't need to start from scratch when implementing new capabilities.
+
+Aspire handle much of the heavy lifting behind the scenes.
+
+Logging, telemetry, and monitoring integrations are also part of the aspire offering, ensuring consistent
+
+approach across multiple microservices.
+
+And also it is modular and extensible.
+
+These integrations are modular, so you only bring in what you need.
+
+Adding a new services like AI based features or vector databases require minimal adjustments.
+
+Thanks to Aspire's pluggable design, you only bring in the services that you need.
+
+Aspire's design lets you plug in without rewriting the core components.
+
+These integrations save your time and promote best practices from day one.
+
+And the last core component is service discovery in dotnet aspire, and it comes with the dynamic routing.
+
+In distributed microservice environment, service endpoints can change dynamically, for instance when
+
+scaling up or down.
+
+DotNet aspire addresses this problem with the service discovery mechanism that keeps track of the microservice
+
+locations, avoiding the need for the hard coded URL or IP addresses, and it has also automatic registration.
+
+When each microservice starts, it registers itself in aspire.
+
+Service discovery or a backing service registry, making it is comparable to other services, and these
+
+registry tracks active instances and also it provides resilience and scaling.
+
+Service discovery also enables load balancing and failover.
+
+If one instance of the service becomes unavailable, it calls are routed to another instance automatically
+
+and increasing resiliency and ensuring uninterrupted services for the end users.
+
+So if you combine all these three core concepts in dotnet aspire, we can say that orchestration ensures
+
+each service and backing services is containerized and started in the correct order, and integrations
+
+lets you effortlessly add databases, caches, messaging systems or identity providers as a backing
+
+services and service discovery binds everything together, allowing microservices to find each other
+
+without manual configuration.
+
+This synergy makes To.net Aspire an excellent choice for the teams who want to build cloud native and
+
+event driven distributed solutions quickly and reliably.

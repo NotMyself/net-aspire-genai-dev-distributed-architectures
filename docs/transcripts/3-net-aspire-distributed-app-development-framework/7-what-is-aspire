@@ -1,0 +1,93 @@
+In this section, we are going to learn dotnet aspire as a distributed application development framework.
+
+We will cover the core concepts orchestration, integration and service discovery.
+
+Let me start with what is dotnet aspire?
+
+DotNet aspire is a cloud native development framework built on top of the.
+
+Net platform.
+
+In order to streamline and standardize the process of creating distributed microservice based applications.
+
+It leverages the best practices and the features of DotNet, such as the ASP.Net core and the latest
+
+language features.
+
+It also adds scaffolding, orchestration, and preconfigured integrations for common cloud based services.
+
+So we can say that dotnet aspire is a cloud native toolkit that extends the capabilities of ASP.Net
+
+core.
+
+It provides a collection of templates, libraries, and best practices that simplify the process of
+
+building microservices and orchestrating them in a containerized environments.
+
+So now let's break down some of the DotNet aspires key features.
+
+The first key feature is pre-built templates and scaffolding.
+
+DotNet aspire provides project templates that jumpstart your microservice creation.
+
+This scaffolding ensures you follow the consistent pattern for the folder structure, dependency injection,
+
+configuration, and logging, and another key feature is built for the cloud native architectures.
+
+It integrates easily with Docker and container orchestration platforms like Azure Container Apps or
+
+Kubernetes, and it emphasizes microservices patterns such as API gateways, service discovery, and
+
+event driven communication.
+
+And another key feature is infrastructure as code environment management.
+
+DotNet aspire comes with the codes and tooling that handles spinning up, backing services for local
+
+development or testing environments.
+
+It reduces the manual overhead of configuring or running multiple services by packaging up into single
+
+orchestrated solution.
+
+Another key feature is integration with common backend services out of the box dotnet aspire support
+
+popular databases like PostgreSQL, MongoDB, distributed cases like Redis and Message Broker like RabbitMQ
+
+and Azure Service Bus, and another key feature is modular and extensible architecture services in a
+
+Net aspire solution are typically decoupled.
+
+You can add new microservices without refactoring the entire system, and we can say it is easy for
+
+adoption if you already know ASP.Net core and the latest.
+
+Net versions moving to.
+
+Net aspire require minimal ramp up time.
+
+So now let's understand why we choose Net aspire.
+
+The first reason is accelerated development.
+
+Standard templates and tooling help the teams quickly stand up new microservices.
+
+And second reason is best practices by default, built in patterns for logging, configuration and container
+
+orchestration encourage consistent and maintainable code.
+
+And also it comes with a cloud native mindset.
+
+Encourage event driven communication, containerization, and horizontal scalability from day one and
+
+it has seamless integration.
+
+Connects readily to external services, databases, message brokers, identity providers with minimal
+
+extra plumbing.
+
+In short, we can say that dotnet aspire is all about faster development of the cloud native microservices,
+
+combining the power of the.
+
+Net platform with the proven patterns and out of the box integrations.

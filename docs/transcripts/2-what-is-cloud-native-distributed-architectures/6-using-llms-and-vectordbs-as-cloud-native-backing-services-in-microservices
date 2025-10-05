@@ -1,0 +1,91 @@
+In this video, we are going to learn how to use AI powered Llms and vector databases as a cloud native
+
+banking services.
+
+But before that, let's understand the evolution of the banking services in microservice architecture.
+
+Our existing application designed with the traditional banking services as we design and scale enterprise
+
+applications.
+
+Traditional banking services like databases, message brokers and distributed caches are essential for
+
+functionality and scalability.
+
+Here you can find traditional banking services including relational databases, distributed cache,
+
+message brokers, and so on.
+
+But now, with the rise of the AI powered technologies, we are entering a new era where llms and vector
+
+databases can also function as a banking services.
+
+These tools provide intelligence, semantic understanding and retrieval capabilities directly embedded
+
+into our application.
+
+So let's visualize how Llms and vector databases integrate into our existing cloud native microservice
+
+architecture.
+
+Here you can see our microservice architecture and traditional banking services.
+
+And now we have new banking services, which is the I baking services to expanding our application to
+
+make it intelligence as a I baking services.
+
+So we use Llms large language models as a baking services which using the ulama.
+
+So when using the LLM as a baking services we use ulama for inference and our use ulama, which enables
+
+local inference of llama and phi models.
+
+By this way, we can use large language models with integrating the ulama into our existing applications.
+
+For example, we will use Llama and Phi models.
+
+These are advanced language models capable of understanding and generating human like text responses,
+
+and we do this in a local environment instead of relying on third party APIs.
+
+Ulama runs entirely on your infrastructure, providing privacy and performance benefits, and we will
+
+expose HTTP endpoints.
+
+Microservices can communicate with ulama through simple HTTP or gRPC endpoints, and after that we use
+
+vector database as a backing.
+
+Services.
+
+Vector databases are specialized data store for embeddings used in the semantic search and AI workflow.
+
+We will store embeddings into vector database, and it holds high dimensional vector representation
+
+of the text or images.
+
+For our application, it might store product description transformed into numerical vectors and we will
+
+provide cosine similarity.
+
+This is common metrics used to measure how close two vectors are, indicating semantic meaning and similarity
+
+between user queries and the product description, and we will implement workflow retrieval.
+
+Augmented generation pulls relevant data from the vector database to enhance LLM responses.
+
+So after that we use a neat integration points.
+
+Integration points are provided.
+
+AI services interact with the existing microservices in our architecture, and we will use Semantic
+
+Kernel and Microsoft's Extensions AI library to provide to connect AI services with existing infrastructure.
+
+As a result, we can say that we use AI as a backend services and treat LLM and vector databases the
+
+same way you treat database and other traditional banking services and external resources that microservices
+
+use over the network.
+
+By this way, we can make these application intelligent with using the AI backend services.
